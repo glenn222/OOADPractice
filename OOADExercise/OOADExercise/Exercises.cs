@@ -1,5 +1,6 @@
 ﻿using System;
 using OOADExercise.Exercise_2;
+using OOADExercise.Exercise_2.Enums;
 
 namespace OOADExercise
 {
@@ -26,11 +27,12 @@ namespace OOADExercise
 
         public void Exercise2()
         {
+            // Guitar Customer
             // Setup Rick's Guitar inventory
             Inventory inventory = new Inventory();
             inventory = initializeInventory(inventory);
 
-            Guitar customerReq = new Guitar("", 0, "Fender", "Stratocastor", "electric", "Alder", "Alder");
+            Guitar customerReq = new Guitar("", 0, Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
             Guitar guitar = inventory.search(customerReq);
 
             if (guitar != null)

@@ -1,11 +1,13 @@
-﻿namespace OOADExercise.Exercise_2
+﻿using OOADExercise.Exercise_2.Enums;
+
+namespace OOADExercise.Exercise_2
 {
     public class Guitar
     {
         private string serialNumber, builder, model, type, backWood, topWood;
         private double price;
 
-        public Guitar(string serialNumber, double price, string builder, string model, string type, string backWood, string topWood)
+        public Guitar(string serialNumber, double price, Builder builder, string model, GuitarType type, Wood backWood, Wood topWood)
         {
             this.serialNumber = serialNumber;
             this.price = price;

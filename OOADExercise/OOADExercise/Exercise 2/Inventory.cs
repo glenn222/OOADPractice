@@ -38,22 +38,19 @@ namespace OOADExercise.Exercise_2
             {
                 Guitar guitar = guitars[i];
                 // Ignore price & serial number since they're unique
-                string builder = searchGuitar.getBuilder();
-                string model = searchGuitar.getModel();
-                string type = searchGuitar.getType();
-                string backWood = searchGuitar.getBackWood();
-                string topWood = searchGuitar.getTopWood();
+                string model = searchGuitar.getModel().ToLower();
 
-                if ((builder != null) && (!builder.Equals("")) && !builder.Equals(guitar.getBuilder()))
+                if (searchGuitar.getBuilder() != guitar.getBuilder())
                     continue;
-                if ((model != null) && (!model.Equals("")) && !model.Equals(guitar.getModel()))
+                if ((model != null) && (!model.Equals("")) && !model.Equals(guitar.getModel().ToLower()))
                     continue;
-                if ((type != null) && (!type.Equals("")) && !type.Equals(guitar.getBuilder()))
+                if (searchGuitar.getType() != guitar.getType())
                     continue;
-                if ((backWood != null) && (!backWood.Equals("")) && !backWood.Equals(guitar.getBackWood()))
+                if (searchGuitar.getBackWood() != guitar.getBackWood())
                     continue;
-                if ((topWood != null) && (!topWood.Equals("")) && !topWood.Equals(guitar.getTopWood()))
+                if (searchGuitar.getTopWood() != guitar.getTopWood())
                     continue;
+                return guitar;
             }
 
             return null;
