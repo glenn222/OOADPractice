@@ -33,20 +33,20 @@ namespace OOADExercise
             // Setup Rick's Guitar inventory
             Inventory inventory = new Inventory();
             inventory = initializeInventory(inventory);
+            GuitarSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
 
-            Guitar customerReq = new Guitar("", 0, Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
-            List<Guitar> guitars = inventory.search(customerReq);
+            List<Guitar> guitars = inventory.search(customerSpec);
 
             if (guitars.Any())
             {
                 foreach (Guitar guitar in guitars)
                 {
                     Console.WriteLine("Customer, you might want this {0} {1} {2} guitar:\n  {3} back and sides,\n  {4} top.\n You can have it for only ${5}!",
-                    BuilderExtensionMethods.toString(guitar.getBuilder()),
-                    guitar.getModel(),
-                    TypeExtensionMethods.toString(guitar.getType()),
-                    WoodExtensionMethods.toString(guitar.getBackWood()),
-                    WoodExtensionMethods.toString(guitar.getTopWood()),
+                    BuilderExtensionMethods.toString(guitar.getSpec().getBuilder()),
+                    guitar.getSpec().getModel(),
+                    TypeExtensionMethods.toString(guitar.getSpec().getType()),
+                    WoodExtensionMethods.toString(guitar.getSpec().getBackWood()),
+                    WoodExtensionMethods.toString(guitar.getSpec().getTopWood()),
                     guitar.getPrice());
                     Console.WriteLine();
                 }
@@ -58,9 +58,10 @@ namespace OOADExercise
 
         private static Inventory initializeInventory(Inventory inventory)
         {
+            GuitarSpec guitarSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
             //Add guitars to our inventory.
-            inventory.addGuitar("V95693", 1499.95, Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
-            inventory.addGuitar("V9512", 1549.95, Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
+            inventory.addGuitar("V95693", 1499.95, guitarSpec);
+            inventory.addGuitar("V9512", 1549.95, guitarSpec);
             return inventory;
         }
     }

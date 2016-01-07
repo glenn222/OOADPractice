@@ -48,6 +48,7 @@
     <Compile Include="Exercise 2\Enums\Builder.cs" />
     <Compile Include="Exercise 2\Enums\GuitarType.cs" />
     <Compile Include="Exercise 2\Guitar.cs" />
+    <Compile Include="Exercise 2\GuitarSpec.cs" />
     <Compile Include="Exercise 2\Inventory.cs" />
     <Compile Include="Exercises.cs" />
     <Compile Include="Exercise 1\Jet.cs" />

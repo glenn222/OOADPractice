@@ -1,22 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using OOADExercise.Exercise_2.Enums;
 
 namespace OOADExercise.Exercise_2
 {
     public class Inventory
     {
         private List<Guitar> guitars;
-
+        
         public Inventory()
         {
             guitars = new List<Guitar>();
         }
 
         // addGuitar() takes in all properties required to create a new Guitar instance, creates one, and adds it to the inventory
-        public void addGuitar(string serialNumber, double price, Builder builder, string model, GuitarType type, Wood backWood, Wood topWood)
+        public void addGuitar(string serialNumber, double price, GuitarSpec spec)
         {
-            Guitar guitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
+            Guitar guitar = new Guitar(serialNumber, price, spec);
             guitars.Add(guitar);
         }
 
@@ -33,24 +32,23 @@ namespace OOADExercise.Exercise_2
         }
 
         // The search method compares each property of the Guitar object it's passed in to each Guitar object in Rick's inventory
-        public List<Guitar> search(Guitar searchGuitar)
+        public List<Guitar> search(GuitarSpec searchGuitarSpec)
         {
             List<Guitar> matchingGuitars = new List<Guitar>();
             for (int i = 0; i < guitars.Count(); i++)
             {
                 Guitar guitar = guitars[i];
-                // Ignore price & serial number since they're unique
-                string model = searchGuitar.getModel().ToLower();
+                string model = searchGuitarSpec.getModel().ToLower();
 
-                if (searchGuitar.getBuilder() != guitar.getBuilder())
+                if (searchGuitarSpec.getBuilder() != guitar.getSpec().getBuilder())
                     continue;
-                if ((model != null) && (!model.Equals("")) && !model.Equals(guitar.getModel().ToLower()))
+                if ((model != null) && (!model.Equals("")) && !model.Equals(guitar.getSpec().getModel().ToLower()))
                     continue;
-                if (searchGuitar.getType() != guitar.getType())
+                if (searchGuitarSpec.getType() != guitar.getSpec().getType())
                     continue;
-                if (searchGuitar.getBackWood() != guitar.getBackWood())
+                if (searchGuitarSpec.getBackWood() != guitar.getSpec().getBackWood())
                     continue;
-                if (searchGuitar.getTopWood() != guitar.getTopWood())
+                if (searchGuitarSpec.getTopWood() != guitar.getSpec().getTopWood())
                     continue;
                 matchingGuitars.Add(guitar);
             }
