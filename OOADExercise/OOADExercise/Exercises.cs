@@ -2,6 +2,7 @@
 using OOADExercise.Exercise_2;
 using OOADExercise.Exercise_2.Enums;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OOADExercise
 {
@@ -36,7 +37,7 @@ namespace OOADExercise
             Guitar customerReq = new Guitar("", 0, Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
             List<Guitar> guitars = inventory.search(customerReq);
 
-            if (guitars != null)
+            if (guitars.Any())
             {
                 foreach (Guitar guitar in guitars)
                 {
