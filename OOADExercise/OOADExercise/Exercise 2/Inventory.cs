@@ -33,8 +33,9 @@ namespace OOADExercise.Exercise_2
         }
 
         // The search method compares each property of the Guitar object it's passed in to each Guitar object in Rick's inventory
-        public Guitar search(Guitar searchGuitar)
+        public List<Guitar> search(Guitar searchGuitar)
         {
+            List<Guitar> matchingGuitars = new List<Guitar>();
             for (int i = 0; i < guitars.Count(); i++)
             {
                 Guitar guitar = guitars[i];
@@ -51,10 +52,10 @@ namespace OOADExercise.Exercise_2
                     continue;
                 if (searchGuitar.getTopWood() != guitar.getTopWood())
                     continue;
-                return guitar;
+                matchingGuitars.Add(guitar);
             }
 
-            return null;
+            return matchingGuitars;
         }
     }
 }
