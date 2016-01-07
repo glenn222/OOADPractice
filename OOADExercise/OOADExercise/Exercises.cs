@@ -28,9 +28,9 @@ namespace OOADExercise
         {
             // Setup Rick's Guitar inventory
             Inventory inventory = new Inventory();
-            initializeInventory(inventory);
+            inventory = initializeInventory(inventory);
 
-            Guitar customerReq = new Guitar("", 0, "fender", "Stratocastor", "electric", "Alder", "Alder");
+            Guitar customerReq = new Guitar("", 0, "Fender", "Stratocastor", "electric", "Alder", "Alder");
             Guitar guitar = inventory.search(customerReq);
 
             if (guitar != null)
@@ -41,9 +41,12 @@ namespace OOADExercise
 
         }
 
-        private static void initializeInventory(Inventory inventory)
+        private static Inventory initializeInventory(Inventory inventory)
         {
             //Add guitars to our inventory.
+            inventory.addGuitar("V95693", 1499.95, "Fender", "Stratocastor", "electric", "Alder", "Alder");
+
+            return inventory;
         }
     }
 }
