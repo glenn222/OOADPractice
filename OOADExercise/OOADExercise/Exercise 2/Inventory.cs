@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using OOADExercise.Exercise_2.Enums;
 
 namespace OOADExercise.Exercise_2
 {
@@ -13,7 +14,7 @@ namespace OOADExercise.Exercise_2
         }
 
         // addGuitar() takes in all properties required to create a new Guitar instance, creates one, and adds it to the inventory
-        public void addGuitar(string serialNumber, double price, string builder, string model, string type, string backWood, string topWood)
+        public void addGuitar(string serialNumber, double price, Builder builder, string model, GuitarType type, Wood backWood, Wood topWood)
         {
             Guitar guitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
             guitars.Add(guitar);

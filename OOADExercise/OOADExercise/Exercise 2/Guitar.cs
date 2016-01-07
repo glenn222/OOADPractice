@@ -4,7 +4,11 @@ namespace OOADExercise.Exercise_2
 {
     public class Guitar
     {
-        private string serialNumber, builder, model, type, backWood, topWood;
+        private string serialNumber, model;
+        Builder builder;
+        GuitarType type;
+        Wood backWood;
+        Wood topWood;
         private double price;
 
         public Guitar(string serialNumber, double price, Builder builder, string model, GuitarType type, Wood backWood, Wood topWood)
@@ -33,7 +37,7 @@ namespace OOADExercise.Exercise_2
             this.price = newPrice;
         }
 
-        public string getBuilder()
+        public Builder getBuilder()
         {
             return builder;
         }
@@ -43,17 +47,17 @@ namespace OOADExercise.Exercise_2
             return model;
         }
 
-        public string getType()
+        public GuitarType getType()
         {
             return type;
         }
 
-        public string getBackWood()
+        public Wood getBackWood()
         {
             return backWood;
         }
 
-        public string getTopWood()
+        public Wood getTopWood()
         {
             return topWood;
         }
