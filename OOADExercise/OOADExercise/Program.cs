@@ -9,7 +9,7 @@ namespace OOADExercise
 
             Exercises exercise = new Exercises();
 
-            exercise.Exercise2();
+            exercise.DougsDogDoors();
 
             Console.ReadKey();
         }

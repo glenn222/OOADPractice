@@ -27,11 +27,12 @@ namespace OOADExercise
             Console.WriteLine(jet.getSpeed());
         }
 
-        public void Exercise2()
+        public void RicksGuitarInventoryStore()
         {
             // Guitar Customer
             // Setup Rick's Guitar inventory
             Inventory inventory = new Inventory();
+
             inventory = initializeInventory(inventory);
             GuitarSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
 
@@ -65,5 +66,11 @@ namespace OOADExercise
             inventory.addGuitar("V9512", 1549.95, guitarSpec);
             return inventory;
         }
+
+        public void DougsDogDoors()
+        {
+
+        }
+
     }
 }

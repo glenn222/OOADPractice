@@ -44,12 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exercise 1\Airplane.cs" />
-    <Compile Include="Exercise 2\Enums\Wood.cs" />
-    <Compile Include="Exercise 2\Enums\Builder.cs" />
-    <Compile Include="Exercise 2\Enums\GuitarType.cs" />
-    <Compile Include="Exercise 2\Guitar.cs" />
-    <Compile Include="Exercise 2\GuitarSpec.cs" />
-    <Compile Include="Exercise 2\Inventory.cs" />
+    <Compile Include="Exercise 2 - RicksGuitarInventory\Enums\Wood.cs" />
+    <Compile Include="Exercise 2 - RicksGuitarInventory\Enums\Builder.cs" />
+    <Compile Include="Exercise 2 - RicksGuitarInventory\Enums\GuitarType.cs" />
+    <Compile Include="Exercise 2 - RicksGuitarInventory\Guitar.cs" />
+    <Compile Include="Exercise 2 - RicksGuitarInventory\GuitarSpec.cs" />
+    <Compile Include="Exercise 2 - RicksGuitarInventory\Inventory.cs" />
     <Compile Include="Exercises.cs" />
     <Compile Include="Exercise 1\Jet.cs" />
     <Compile Include="Program.cs" />
@@ -57,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exercise 3- DougsDogDoor\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
