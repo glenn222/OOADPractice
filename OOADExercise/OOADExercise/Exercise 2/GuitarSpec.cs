@@ -16,14 +16,14 @@ namespace OOADExercise.Exercise_2
         private Wood topWood;
         private int numStrings;
 
-        public GuitarSpec(Builder builder, string model, GuitarType type, Wood backWood, Wood topWood, int numStrings)
+        public GuitarSpec(Builder builder, string model, GuitarType type, int numStrings, Wood backWood, Wood topWood)
         {
             this.builder = builder;
             this.model = model;
             this.type = type;
+            this.numStrings = numStrings;
             this.backWood = backWood;
             this.topWood = topWood;
-            this.numStrings = numStrings;
         }
 
         public Builder getBuilder()
@@ -56,28 +56,21 @@ namespace OOADExercise.Exercise_2
             return numStrings;
         }
 
-        public List<Guitar> compareSpec(List<Guitar> guitars, GuitarSpec searchGuitarSpec)
+        public bool matches(GuitarSpec searchGuitarSpec)
         {
+            // No need to indirectly call a method to get the GuitarSpecs anymore, we can directly refer specs to its properties
+            if (searchGuitarSpec.builder != builder)
+                return false;
+            if ((model != null) && (!model.Equals("")) && !model.Equals(searchGuitarSpec.model))
+                return false;
+            if (searchGuitarSpec.type != type)
+                return false;
+            if (searchGuitarSpec.backWood != backWood)
+                return false;
+            if (searchGuitarSpec.topWood != topWood)
+                return false;
 
-            List<Guitar> matchingGuitars = new List<Guitar>();
-            foreach (Guitar guitar in guitars)
-            {
-                GuitarSpec guitarSpec = guitar.getSpec();
-                string model = searchGuitarSpec.getModel().ToLower();
-
-                if (searchGuitarSpec.getBuilder() != builder)
-                    continue;
-                if ((model != null) && (!model.Equals("")) && !model.Equals(this.model.ToLower()))
-                    continue;
-                if (searchGuitarSpec.getType() != type)
-                    continue;
-                if (searchGuitarSpec.getBackWood() != backWood)
-                    continue;
-                if (searchGuitarSpec.getTopWood() != topWood)
-                    continue;
-                matchingGuitars.Add(guitar);
-            }
-            return matchingGuitars;
+            return true;
            
         }
     }

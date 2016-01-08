@@ -36,8 +36,12 @@ namespace OOADExercise.Exercise_2
         public List<Guitar> search(GuitarSpec searchGuitarSpec)
         {
             // Delegate responsibility to compare the specifications of guitars
-            List<Guitar> matchingGuitars = searchGuitarSpec.compareSpec(guitars, searchGuitarSpec);
-
+            List<Guitar> matchingGuitars = new List<Guitar>();
+            foreach (Guitar guitar in guitars)
+            {
+                if (guitar.getSpec().matches(searchGuitarSpec))
+                    matchingGuitars.Add(guitar);
+            }
             return matchingGuitars;
         }
     }
