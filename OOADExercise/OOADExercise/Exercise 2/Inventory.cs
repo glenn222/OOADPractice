@@ -32,27 +32,27 @@ namespace OOADExercise.Exercise_2
         }
 
         // The search method compares each property of the Guitar object it's passed in to each Guitar object in Rick's inventory
+        // Returns a list of guitars that match the customers specifications of the guitar.
         public List<Guitar> search(GuitarSpec searchGuitarSpec)
         {
             List<Guitar> matchingGuitars = new List<Guitar>();
-            for (int i = 0; i < guitars.Count(); i++)
+            foreach (Guitar guitar in guitars)
             {
-                Guitar guitar = guitars[i];
+                GuitarSpec guitarSpec = guitar.getSpec();
                 string model = searchGuitarSpec.getModel().ToLower();
 
-                if (searchGuitarSpec.getBuilder() != guitar.getSpec().getBuilder())
+                if (searchGuitarSpec.getBuilder() != guitarSpec.getBuilder())
                     continue;
-                if ((model != null) && (!model.Equals("")) && !model.Equals(guitar.getSpec().getModel().ToLower()))
+                if ((model != null) && (!model.Equals("")) && !model.Equals(guitarSpec.getModel().ToLower()))
                     continue;
-                if (searchGuitarSpec.getType() != guitar.getSpec().getType())
+                if (searchGuitarSpec.getType() != guitarSpec.getType())
                     continue;
-                if (searchGuitarSpec.getBackWood() != guitar.getSpec().getBackWood())
+                if (searchGuitarSpec.getBackWood() != guitarSpec.getBackWood())
                     continue;
-                if (searchGuitarSpec.getTopWood() != guitar.getSpec().getTopWood())
+                if (searchGuitarSpec.getTopWood() != guitarSpec.getTopWood())
                     continue;
                 matchingGuitars.Add(guitar);
             }
-
             return matchingGuitars;
         }
     }
