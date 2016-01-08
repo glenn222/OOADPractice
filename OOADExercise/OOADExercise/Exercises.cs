@@ -4,6 +4,7 @@ using System.Linq;
 using OOADExercise.Exercise_2;
 using OOADExercise.Exercise_2.Enums;
 using OOADExercise.Exercise_3__DougsDogDoor;
+using System.Threading;
 
 namespace OOADExercise
 {
@@ -74,14 +75,27 @@ namespace OOADExercise
 
             DogDoor door = new DogDoor();
             Remote remote = new Remote(door);
+            Thread currentThread = Thread.CurrentThread;
 
             Console.WriteLine("Fido barks to go outside...");
             remote.pressButton();
             Console.WriteLine("\nFido has gone outside...");
             Console.WriteLine("\nFido's all done...");
-            Console.WriteLine("\nFido's back inside");
+            currentThread.Interrupt();
+
+            try
+            {
+                Thread.Sleep(10000);
+            }
+            catch (ThreadInterruptedException e)
+            {
+                Console.WriteLine("...but he's stuck outside!");
+                Console.WriteLine("\nFido starts barking... ");
+                Console.WriteLine("So Todd grabs the remote control");
+                remote.pressButton();
+                Console.WriteLine("\nFido's back inside");
+            }
 
         }
-
     }
 }
