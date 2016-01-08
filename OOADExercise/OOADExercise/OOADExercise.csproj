@@ -50,6 +50,8 @@
     <Compile Include="Exercise 2 - RicksGuitarInventory\Guitar.cs" />
     <Compile Include="Exercise 2 - RicksGuitarInventory\GuitarSpec.cs" />
     <Compile Include="Exercise 2 - RicksGuitarInventory\Inventory.cs" />
+    <Compile Include="Exercise 3- DougsDogDoor\DogDoor.cs" />
+    <Compile Include="Exercise 3- DougsDogDoor\Remote.cs" />
     <Compile Include="Exercises.cs" />
     <Compile Include="Exercise 1\Jet.cs" />
     <Compile Include="Program.cs" />
@@ -58,9 +60,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exercise 3- DougsDogDoor\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

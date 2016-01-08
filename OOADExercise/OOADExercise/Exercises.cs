@@ -1,8 +1,9 @@
 ﻿using System;
-using OOADExercise.Exercise_2;
-using OOADExercise.Exercise_2.Enums;
 using System.Collections.Generic;
 using System.Linq;
+using OOADExercise.Exercise_2;
+using OOADExercise.Exercise_2.Enums;
+using OOADExercise.Exercise_3__DougsDogDoor;
 
 namespace OOADExercise
 {
@@ -69,6 +70,16 @@ namespace OOADExercise
 
         public void DougsDogDoors()
         {
+            // Dog Door Simulator
+
+            DogDoor door = new DogDoor();
+            Remote remote = new Remote(door);
+
+            Console.WriteLine("Fido barks to go outside...");
+            remote.pressButton();
+            Console.WriteLine("\nFido has gone outside...");
+            Console.WriteLine("\nFido's all done...");
+            Console.WriteLine("\nFido's back inside");
 
         }
 
