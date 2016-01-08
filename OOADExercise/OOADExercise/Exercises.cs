@@ -41,14 +41,15 @@ namespace OOADExercise
             {
                 foreach (Guitar guitar in guitars)
                 {
+                    GuitarSpec guitarSpec = guitar.getSpec();
                     Console.WriteLine("Customer, you might want this {0} {1} {2} guitar:\n  {3} back and sides,\n  {4} top.\n You can have it for only ${5}!",
-                    BuilderExtensionMethods.toString(guitar.getSpec().getBuilder()),
-                    guitar.getSpec().getModel(),
-                    TypeExtensionMethods.toString(guitar.getSpec().getType()),
-                    WoodExtensionMethods.toString(guitar.getSpec().getBackWood()),
-                    WoodExtensionMethods.toString(guitar.getSpec().getTopWood()),
+                    BuilderExtensionMethods.toString(guitarSpec.getBuilder()),
+                    guitarSpec.getModel(),
+                    TypeExtensionMethods.toString(guitarSpec.getType()),
+                    WoodExtensionMethods.toString(guitarSpec.getBackWood()),
+                    WoodExtensionMethods.toString(guitarSpec.getTopWood()),
                     guitar.getPrice());
-                    Console.WriteLine();
+                    Console.WriteLine("---------------------------");
                 }
             }
             else
