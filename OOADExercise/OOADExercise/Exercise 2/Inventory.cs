@@ -35,24 +35,9 @@ namespace OOADExercise.Exercise_2
         // Returns a list of guitars that match the customers specifications of the guitar.
         public List<Guitar> search(GuitarSpec searchGuitarSpec)
         {
-            List<Guitar> matchingGuitars = new List<Guitar>();
-            foreach (Guitar guitar in guitars)
-            {
-                GuitarSpec guitarSpec = guitar.getSpec();
-                string model = searchGuitarSpec.getModel().ToLower();
+            // Delegate responsibility to compare the specifications of guitars
+            List<Guitar> matchingGuitars = searchGuitarSpec.compareSpec(guitars, searchGuitarSpec);
 
-                if (searchGuitarSpec.getBuilder() != guitarSpec.getBuilder())
-                    continue;
-                if ((model != null) && (!model.Equals("")) && !model.Equals(guitarSpec.getModel().ToLower()))
-                    continue;
-                if (searchGuitarSpec.getType() != guitarSpec.getType())
-                    continue;
-                if (searchGuitarSpec.getBackWood() != guitarSpec.getBackWood())
-                    continue;
-                if (searchGuitarSpec.getTopWood() != guitarSpec.getTopWood())
-                    continue;
-                matchingGuitars.Add(guitar);
-            }
             return matchingGuitars;
         }
     }

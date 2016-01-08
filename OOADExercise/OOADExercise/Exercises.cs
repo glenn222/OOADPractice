@@ -33,7 +33,7 @@ namespace OOADExercise
             // Setup Rick's Guitar inventory
             Inventory inventory = new Inventory();
             inventory = initializeInventory(inventory);
-            GuitarSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
+            GuitarSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER, 12);
 
             List<Guitar> guitars = inventory.search(customerSpec);
 
@@ -59,7 +59,7 @@ namespace OOADExercise
 
         private static Inventory initializeInventory(Inventory inventory)
         {
-            GuitarSpec guitarSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
+            GuitarSpec guitarSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER, 12);
             //Add guitars to our inventory.
             inventory.addGuitar("V95693", 1499.95, guitarSpec);
             inventory.addGuitar("V9512", 1549.95, guitarSpec);
