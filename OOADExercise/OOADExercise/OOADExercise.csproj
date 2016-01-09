@@ -50,6 +50,7 @@
     <Compile Include="Exercise 2 - RicksGuitarInventory\Guitar.cs" />
     <Compile Include="Exercise 2 - RicksGuitarInventory\GuitarSpec.cs" />
     <Compile Include="Exercise 2 - RicksGuitarInventory\Inventory.cs" />
+    <Compile Include="Exercise 3- DougsDogDoor\BarkRecognizer.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\DogDoor.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\Remote.cs" />
     <Compile Include="Exercises.cs" />

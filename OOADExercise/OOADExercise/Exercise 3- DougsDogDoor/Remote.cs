@@ -25,23 +25,7 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
             else
             {
                 door.Open();
-
-                Timer timer = new Timer(5000);
-                timer.Enabled = true;
-                timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-                timer.Start();
             }
-        }
-
-        private void OnTimedEvent(object sender, EventArgs e)
-        {
-            autoCloseDoor((Timer) sender);
-        }
-
-        private void autoCloseDoor(Timer timer)
-        {
-            this.door.Close();
-            timer.Stop();
         }
     }
 }

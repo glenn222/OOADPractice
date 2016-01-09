@@ -75,26 +75,35 @@ namespace OOADExercise
 
             DogDoor door = new DogDoor();
             Remote remote = new Remote(door);
-            Thread currentThread = Thread.CurrentThread;
+            //Create the BarkRecognizer, connect it to the door, and let it listen for some barking.
+            BarkRecognizer barkRecognizer = new BarkRecognizer(door);
+            String sound = "bark";
+            //Thread currentThread = Thread.CurrentThread;
 
+            
+            // Simulate the hardware hearing a bark
             Console.WriteLine("Fido barks to go outside...");
-            remote.pressButton();
+            barkRecognizer.Recognize(sound);
+            //remote.pressButton();
             Console.WriteLine("\nFido has gone outside...");
+            door.setOpenTime(3000);
             Console.WriteLine("\nFido's all done...");
-            currentThread.Interrupt();
+            DogLockedOut(barkRecognizer);
+            Thread.CurrentThread.Interrupt();
+        }
 
+        private void DogLockedOut(BarkRecognizer recognizer)
+        {
             try
             {
                 Thread.Sleep(10000);
             }
-            catch (ThreadInterruptedException e)
-            {
-                Console.WriteLine("...but he's stuck outside!");
-                Console.WriteLine("\nFido starts barking... ");
-                Console.WriteLine("So Todd grabs the remote control");
-                remote.pressButton();
-                Console.WriteLine("\nFido's back inside");
-            }
+            catch (ThreadInterruptedException e) {}
+
+            Console.WriteLine("...but he's stuck outside!");
+            Console.WriteLine("\nFido starts barking... ");
+            recognizer.Recognize("bark");
+            Console.WriteLine("\nFido's back inside");
 
         }
     }
