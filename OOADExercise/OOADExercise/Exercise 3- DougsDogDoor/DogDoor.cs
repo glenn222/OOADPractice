@@ -11,18 +11,20 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
     {
         private bool open;
         private int openTime;
-        private Bark allowedBark;
+        private List<Bark> allowedBarks;
 
         public DogDoor()
         {
             this.open = false;
             this.openTime = 5000;
+            this.allowedBarks = new List<Bark>();
         }
 
         public DogDoor(int openTime)
         {
             this.open = false;
             this.openTime = openTime;
+            this.allowedBarks = new List<Bark>();
         }
 
         public void Open()
@@ -53,15 +55,14 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
             return open;
         }
 
-        public Bark setAllowedBark (Bark bark)
+        public void addAllowedBark (Bark bark)
         {
-            allowedBark = new Bark(bark.getSound());
-            return allowedBark;
+            allowedBarks.Add(bark);
         }
 
-        public Bark getAllowedBark()
+        public List<Bark> getAllowedBarks()
         {
-            return allowedBark;
+            return allowedBarks;
         }
 
         private void OnTimedEvent(object sender, EventArgs e)

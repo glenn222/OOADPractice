@@ -82,30 +82,43 @@ namespace OOADExercise
             Bark bark = new Bark(sound);
             //Thread currentThread = Thread.CurrentThread;
 
+            door.addAllowedBark(new Bark("rowlf"));
+            door.addAllowedBark(new Bark("rooowlf"));
+            door.addAllowedBark(new Bark("rawlf"));
+            door.addAllowedBark(new Bark("woof"));
+            
 
             // Simulate the hardware hearing a bark
-            Console.WriteLine("Fido barks to go outside...");
-            door.setAllowedBark(bark);
-            //barkRecognizer.Recognize(bark);
-            Console.WriteLine("\nFido has gone outside...");
-            Console.WriteLine("\nFido's all done...");
+            Console.WriteLine("Bruce starts barking.");
+            barkRecognizer.Recognize(new Bark("rowlf"));
+            
+            Console.WriteLine("\nBruce has gone outside...");
             DogLockedOut(barkRecognizer);
-            Thread.CurrentThread.Interrupt();
+
+            // Simulate the hardware hearing a bark (not Bruce!)
+            Bark smallDogBark = new Bark("yip");
+            Console.WriteLine("A small dog starts barking");
+            barkRecognizer.Recognize(smallDogBark);
+
+            try
+            {
+                Thread.Sleep(5000);
+            } catch (ThreadInterruptedException e) { }
+
+            Console.WriteLine("Bruce starts barking.");
+            barkRecognizer.Recognize(new Bark("rooowlf"));
+
+            Console.WriteLine("\n Bruce's back inside");
         }
 
         private void DogLockedOut(BarkRecognizer recognizer)
         {
-            try
-            {
+            try {
                 Thread.Sleep(10000);
             }
             catch (ThreadInterruptedException e) {}
-
+            Console.WriteLine("\nBruce's all done...");
             Console.WriteLine("...but he's stuck outside!");
-            Console.WriteLine("\nFido starts barking... ");
-            recognizer.Recognize(new Bark("bark"));
-            Console.WriteLine("\nFido's back inside");
-
         }
     }
 }

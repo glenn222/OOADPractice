@@ -17,10 +17,10 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
 
         public bool equals (object bark)
         {
-            if (bark.GetType().Equals(new Bark(getSound())))
+            if (bark.GetType().Name.Equals(this.GetType().Name))
             {
-                Bark otherBark = (Bark)bark;
-                if (sound.Equals(otherBark.sound))
+                Bark allowedBark = (Bark)bark;
+                if (sound.Equals(allowedBark.sound))
                 {
                     Console.WriteLine("Barks are the same");
                     return true;

@@ -20,10 +20,18 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
             // The recognize method ask the owner's dog's bark object to see if it is
             // equal to the Bark instance supplied by Doug's hardware, using Bark.equals()
             Console.WriteLine("BarkRecognizer: Heard a '{0}'", bark.getSound());
-            if ((door.getAllowedBark().equals(bark)))
-                door.Open();
-            else
+            List<Bark> allowedBarks = door.getAllowedBarks();
+            foreach (Bark allowedBark in allowedBarks)
+            {
+                if ((bark.equals(allowedBark)))
+                {
+                    door.Open();
+                    return;
+                }
                 Console.WriteLine("This dog is not allowed");
+                
+            }
+            
         }
     }
 }
