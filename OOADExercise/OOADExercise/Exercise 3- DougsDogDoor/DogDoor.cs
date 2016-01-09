@@ -11,6 +11,7 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
     {
         private bool open;
         private int openTime;
+        private Bark allowedBark;
 
         public DogDoor()
         {
@@ -50,6 +51,17 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
         public Boolean isOpen()
         {
             return open;
+        }
+
+        public Bark setAllowedBark (Bark bark)
+        {
+            allowedBark = new Bark(bark.getSound());
+            return allowedBark;
+        }
+
+        public Bark getAllowedBark()
+        {
+            return allowedBark;
         }
 
         private void OnTimedEvent(object sender, EventArgs e)

@@ -15,11 +15,15 @@ namespace OOADExercise.Exercise_3__DougsDogDoor
             this.door = door;
         }
 
-        public void Recognize(String sound)
+        public void Recognize(Bark bark)
         {
-            Console.WriteLine("BarkRecognizer: Heard a '{0}'", sound);
-            if (sound.Equals("bark"))
+            // The recognize method ask the owner's dog's bark object to see if it is
+            // equal to the Bark instance supplied by Doug's hardware, using Bark.equals()
+            Console.WriteLine("BarkRecognizer: Heard a '{0}'", bark.getSound());
+            if ((door.getAllowedBark().equals(bark)))
                 door.Open();
+            else
+                Console.WriteLine("This dog is not allowed");
         }
     }
 }

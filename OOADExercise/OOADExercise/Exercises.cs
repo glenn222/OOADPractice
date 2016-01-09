@@ -77,16 +77,17 @@ namespace OOADExercise
             Remote remote = new Remote(door);
             //Create the BarkRecognizer, connect it to the door, and let it listen for some barking.
             BarkRecognizer barkRecognizer = new BarkRecognizer(door);
+            
             String sound = "bark";
+            Bark bark = new Bark(sound);
             //Thread currentThread = Thread.CurrentThread;
 
-            
+
             // Simulate the hardware hearing a bark
             Console.WriteLine("Fido barks to go outside...");
-            barkRecognizer.Recognize(sound);
-            //remote.pressButton();
+            door.setAllowedBark(bark);
+            //barkRecognizer.Recognize(bark);
             Console.WriteLine("\nFido has gone outside...");
-            door.setOpenTime(3000);
             Console.WriteLine("\nFido's all done...");
             DogLockedOut(barkRecognizer);
             Thread.CurrentThread.Interrupt();
@@ -102,7 +103,7 @@ namespace OOADExercise
 
             Console.WriteLine("...but he's stuck outside!");
             Console.WriteLine("\nFido starts barking... ");
-            recognizer.Recognize("bark");
+            recognizer.Recognize(new Bark("bark"));
             Console.WriteLine("\nFido's back inside");
 
         }
