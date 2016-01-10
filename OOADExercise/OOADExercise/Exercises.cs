@@ -29,14 +29,14 @@ namespace OOADExercise
             Console.WriteLine(jet.getSpeed());
         }
 
-        public void RicksGuitarInventoryStore()
+        public void RicksStringInstrumentsStore()
         {
             // Guitar Customer
             // Setup Rick's Guitar inventory
             Inventory inventory = new Inventory();
 
             inventory = initializeInventory(inventory);
-            GuitarSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
+            GuitarSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", InstrumentType.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
 
             List<Guitar> guitars = inventory.search(customerSpec);
 
@@ -44,7 +44,7 @@ namespace OOADExercise
             {
                 foreach (Guitar guitar in guitars)
                 {
-                    GuitarSpec guitarSpec = guitar.getSpec();
+                    GuitarSpec guitarSpec = (GuitarSpec) guitar.getSpec();
                     Console.WriteLine("Customer, you might want this {0} {1} {2} guitar:\n  {3} back and sides,\n  {4} top.\n You can have it for only ${5}!",
                     BuilderExtensionMethods.toString(guitarSpec.getBuilder()),
                     guitarSpec.getModel(),
@@ -62,10 +62,10 @@ namespace OOADExercise
 
         private static Inventory initializeInventory(Inventory inventory)
         {
-            GuitarSpec guitarSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", GuitarType.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
+            GuitarSpec instrumentSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", InstrumentType.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
             //Add guitars to our inventory.
-            inventory.addGuitar("V95693", 1499.95, guitarSpec);
-            inventory.addGuitar("V9512", 1549.95, guitarSpec);
+            inventory.addInstrument("V95693", 1499.95, instrumentSpec);
+            inventory.addInstrument("V9512", 1549.95, instrumentSpec);
             return inventory;
         }
 
@@ -103,7 +103,7 @@ namespace OOADExercise
             try
             {
                 Thread.Sleep(5000);
-            } catch (ThreadInterruptedException e) { }
+            } catch (ThreadInterruptedException) { }
 
             Console.WriteLine("Bruce starts barking.");
             barkRecognizer.Recognize(new Bark("rooowlf"));
@@ -116,7 +116,7 @@ namespace OOADExercise
             try {
                 Thread.Sleep(10000);
             }
-            catch (ThreadInterruptedException e) {}
+            catch (ThreadInterruptedException) {}
             Console.WriteLine("\nBruce's all done...");
             Console.WriteLine("...but he's stuck outside!");
         }

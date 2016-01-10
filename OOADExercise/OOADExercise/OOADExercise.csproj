@@ -44,12 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exercise 1\Airplane.cs" />
-    <Compile Include="Exercise 2 - RicksGuitarInventory\Enums\Wood.cs" />
-    <Compile Include="Exercise 2 - RicksGuitarInventory\Enums\Builder.cs" />
-    <Compile Include="Exercise 2 - RicksGuitarInventory\Enums\GuitarType.cs" />
-    <Compile Include="Exercise 2 - RicksGuitarInventory\Guitar.cs" />
-    <Compile Include="Exercise 2 - RicksGuitarInventory\GuitarSpec.cs" />
-    <Compile Include="Exercise 2 - RicksGuitarInventory\Inventory.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\Style.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\Wood.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\Builder.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\InstrumentType.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Guitar.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\GuitarSpec.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Instrument.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\InstrumentSpec.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Inventory.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Mandolin.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\MandolinSpec.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\BarkRecognizer.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\Bark.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\DogDoor.cs" />

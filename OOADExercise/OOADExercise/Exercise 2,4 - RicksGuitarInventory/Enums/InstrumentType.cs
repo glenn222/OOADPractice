@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace OOADExercise.Exercise_2.Enums
 {
-    public enum GuitarType
+    public enum InstrumentType
     {
         ACOUSTIC, ELECTRIC
     }
 
     public class TypeExtensionMethods
     {
-        public static string toString(GuitarType type)
+        public static string toString(InstrumentType type)
         {
             switch (type)
             {
-                case GuitarType.ACOUSTIC:
+                case InstrumentType.ACOUSTIC:
                     return "Acoustic";
-                case GuitarType.ELECTRIC:
+                case InstrumentType.ELECTRIC:
                     return "Electric";
                 default:
                     return null;
