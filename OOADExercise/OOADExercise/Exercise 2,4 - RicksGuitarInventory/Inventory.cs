@@ -39,29 +39,17 @@ namespace OOADExercise.Exercise_2
         }
 
         // The search method compares each property of the Guitar object it's passed in to each Guitar object in Rick's inventory
-        // Returns a list of guitars that match the customers specifications of the guitar.
-        public List<Guitar> search(GuitarSpec searchGuitarSpec)
+        // Returns a list of guitars that match the customers specifications of the instrument.
+        public List<Instrument> search(InstrumentSpec searchSpec)
         {
-            // Delegate responsibility to compare the specifications of guitars
-            List<Guitar> matchingGuitars = new List<Guitar>();
-            foreach (Guitar guitar in inventory)
+            // Delegate responsibility to compare the specifications of instruments
+            List<Instrument> matchingInstruments = new List<Instrument>();
+            foreach (Instrument instrument in inventory)
             {
-                if (guitar.getSpec().matches(searchGuitarSpec))
-                    matchingGuitars.Add(guitar);
+                if (instrument.getSpec().matches(searchSpec))
+                    matchingInstruments.Add(instrument);
             }
-            return matchingGuitars;
-        }
-
-        public List<Mandolin> search(MandolinSpec searchMandolinSpec)
-        {
-            // Delegate responsibility to compare the specifications of guitars
-            List<Mandolin> matchingMandolins = new List<Mandolin>();
-            foreach (Mandolin mandolin in inventory)
-            {
-                if (mandolin.getSpec().matches(searchMandolinSpec))
-                    matchingMandolins.Add(mandolin);
-            }
-            return matchingMandolins;
+            return matchingInstruments;
         }
     }
 }

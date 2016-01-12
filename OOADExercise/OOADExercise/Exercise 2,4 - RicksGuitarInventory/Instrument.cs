@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OOADExercise.Exercise_2;
+using OOADExercise.Exercise_2.Enums;
 
 namespace OOADExercise.Exercise_2_4___RicksGuitarInventory
 {
-    public abstract class Instrument
+    public class Instrument
     {
         private string serialNumber;
         private double price;
         private InstrumentSpec instrumentSpec;
+        private InstrumentType instrumentType;
 
         public Instrument(string serialNumber, double price, InstrumentSpec instrumentSpec)
         {

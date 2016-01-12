@@ -5,6 +5,7 @@ using OOADExercise.Exercise_2;
 using OOADExercise.Exercise_2.Enums;
 using OOADExercise.Exercise_3__DougsDogDoor;
 using System.Threading;
+using OOADExercise.Exercise_2_4___RicksGuitarInventory;
 
 namespace OOADExercise
 {
@@ -36,22 +37,22 @@ namespace OOADExercise
             Inventory inventory = new Inventory();
 
             inventory = initializeInventory(inventory);
-            GuitarSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", InstrumentType.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
+            InstrumentSpec customerSpec = new GuitarSpec(Builder.FENDER, "Stratocastor", InstrumentType.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
 
-            List<Guitar> guitars = inventory.search(customerSpec);
+            List<Instrument> instruments = inventory.search(customerSpec);
 
-            if (guitars.Any())
+            if (instruments.Any())
             {
-                foreach (Guitar guitar in guitars)
+                foreach (Instrument instrument in instruments)
                 {
-                    GuitarSpec guitarSpec = (GuitarSpec) guitar.getSpec();
+                    InstrumentSpec instrumentSpec = (InstrumentSpec)instrument.getSpec();
                     Console.WriteLine("Customer, you might want this {0} {1} {2} guitar:\n  {3} back and sides,\n  {4} top.\n You can have it for only ${5}!",
-                    BuilderExtensionMethods.toString(guitarSpec.getBuilder()),
-                    guitarSpec.getModel(),
-                    TypeExtensionMethods.toString(guitarSpec.getType()),
-                    WoodExtensionMethods.toString(guitarSpec.getBackWood()),
-                    WoodExtensionMethods.toString(guitarSpec.getTopWood()),
-                    guitar.getPrice());
+                    BuilderExtensionMethods.toString(instrumentSpec.getBuilder()),
+                    instrumentSpec.getModel(),
+                    TypeExtensionMethods.toString(instrumentSpec.getType()),
+                    WoodExtensionMethods.toString(instrumentSpec.getBackWood()),
+                    WoodExtensionMethods.toString(instrumentSpec.getTopWood()),
+                    instrument.getPrice());
                     Console.WriteLine("---------------------------");
                 }
             }

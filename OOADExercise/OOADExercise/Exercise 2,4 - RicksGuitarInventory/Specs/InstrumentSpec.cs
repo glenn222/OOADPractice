@@ -2,7 +2,7 @@
 
 namespace OOADExercise.Exercise_2_4___RicksGuitarInventory
 {
-    public abstract class InstrumentSpec
+    public class InstrumentSpec
     {
         private Builder builder;
         private string model;
