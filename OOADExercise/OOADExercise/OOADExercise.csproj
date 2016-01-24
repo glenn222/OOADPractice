@@ -43,26 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DougsDoors.cs" />
     <Compile Include="Exercise 1\Airplane.cs" />
+    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\PlayType.cs" />
     <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\Style.cs" />
     <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\Wood.cs" />
     <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\Builder.cs" />
     <Compile Include="Exercise 2,4 - RicksGuitarInventory\Enums\InstrumentType.cs" />
-    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Guitar.cs" />
-    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Specs\GuitarSpec.cs" />
     <Compile Include="Exercise 2,4 - RicksGuitarInventory\Instrument.cs" />
     <Compile Include="Exercise 2,4 - RicksGuitarInventory\Specs\InstrumentSpec.cs" />
     <Compile Include="Exercise 2,4 - RicksGuitarInventory\Inventory.cs" />
-    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Mandolin.cs" />
-    <Compile Include="Exercise 2,4 - RicksGuitarInventory\Specs\MandolinSpec.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\BarkRecognizer.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\Bark.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\DogDoor.cs" />
     <Compile Include="Exercise 3- DougsDogDoor\Remote.cs" />
-    <Compile Include="Exercises.cs" />
+    <Compile Include="ExerciseOne.cs" />
     <Compile Include="Exercise 1\Jet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RicksStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

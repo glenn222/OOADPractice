@@ -8,21 +8,28 @@ namespace OOADExercise.Exercise_2.Enums
 {
     public enum InstrumentType
     {
-        ACOUSTIC, ELECTRIC
+        GUITAR, BANJO, DOBRO, FIDDLE, BASS, MANDOLIN
     }
-
-    public class TypeExtensionMethods
+    public class InstrumentTypeExtensionMethods
     {
         public static string toString(InstrumentType type)
         {
             switch (type)
             {
-                case InstrumentType.ACOUSTIC:
-                    return "Acoustic";
-                case InstrumentType.ELECTRIC:
-                    return "Electric";
+                case InstrumentType.GUITAR:
+                    return "Guitar";
+                case InstrumentType.BANJO:
+                    return "Banjo";
+                case InstrumentType.DOBRO:
+                    return "Dobro";
+                case InstrumentType.FIDDLE:
+                    return "Fiddle";
+                case InstrumentType.BASS:
+                    return "Bass";
+                case InstrumentType.MANDOLIN:
+                    return "Mandolin";
                 default:
-                    return null;
+                    return "Unspecified";
             }
         }
     }

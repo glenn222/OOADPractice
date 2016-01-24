@@ -18,13 +18,7 @@ namespace OOADExercise.Exercise_2
         // addGuitar() takes in all properties required to create a new Guitar instance, creates one, and adds it to the inventory
         public void addInstrument(string serialNumber, double price, InstrumentSpec spec)
         {
-            Instrument instrument = null;
-            if (spec is GuitarSpec)
-            {
-                instrument = new Guitar(serialNumber, price, (GuitarSpec)spec);
-            }
-            else if (spec is MandolinSpec)
-                instrument = new Mandolin(serialNumber, price, (MandolinSpec)spec);
+            Instrument instrument = new Instrument(serialNumber, price, spec);
             inventory.Add(instrument);
         }
 

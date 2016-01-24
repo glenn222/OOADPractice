@@ -1,65 +1,43 @@
 ﻿using OOADExercise.Exercise_2.Enums;
+using System.Collections.Generic;
 
 namespace OOADExercise.Exercise_2_4___RicksGuitarInventory
 {
     public class InstrumentSpec
     {
-        private Builder builder;
-        private string model;
-        private InstrumentType type;
-        private Wood backWood;
-        private Wood topWood;
+        private Dictionary<string, object> properties;
 
-        public InstrumentSpec(Builder builder, string model, InstrumentType type, Wood backWood, Wood topWood)
-        {
-            this.builder = builder;
-            this.model = model;
-            this.type = type;
-            this.backWood = backWood;
-            this.topWood = topWood;
+        public InstrumentSpec(Dictionary<string, object> properties) { 
+            if (properties == null)
+            {
+                this.properties = new Dictionary<string, object>();
+            }
+            else
+            {
+                this.properties = new Dictionary<string, object>(properties);
+            }
         }
 
         public InstrumentSpec() { }
 
-        public Builder getBuilder()
+        public object getProperty(string propertyName)
         {
-            return builder;
+            return this.properties[propertyName];
         }
 
-        public string getModel()
+        public Dictionary<string, object> getProperties()
         {
-            return model;
+            return this.properties;
         }
 
-        public InstrumentType getType()
+        public virtual bool matches(InstrumentSpec otherSpec)
         {
-            return type;
-        }
-
-        public Wood getBackWood()
-        {
-            return backWood;
-        }
-
-        public Wood getTopWood()
-        {
-            return topWood;
-        }
-
-        public virtual bool matches(InstrumentSpec searchInstrumentSpec)
-        {
-            // No need to indirectly call a method to get the InstrumentSpecs anymore, we can directly refer specs to its properties
-            if (searchInstrumentSpec.builder != builder)
-                return false;
-            if ((model != null) && (!model.Equals("")) && !model.Equals(searchInstrumentSpec.model))
-                return false;
-            if (searchInstrumentSpec.type != type)
-                return false;
-            if (searchInstrumentSpec.backWood != backWood)
-                return false;
-            if (searchInstrumentSpec.topWood != topWood)
-                return false;
-
+            List<string> keyList = new List<string>(otherSpec.getProperties().Keys);
+            foreach (string key in keyList)
+            {
+                if (!properties[key].Equals(otherSpec.getProperty(key)))
+                    return false;
+            }
             return true;
 
         }

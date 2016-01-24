@@ -7,9 +7,9 @@ namespace OOADExercise
         static void Main(string[] args)
         {
 
-            Exercises exercise = new Exercises();
+            RicksStore store = new RicksStore();
 
-            exercise.RicksStringInstrumentsStore();
+            store.RunSimulator();
 
             Console.ReadKey();
         }

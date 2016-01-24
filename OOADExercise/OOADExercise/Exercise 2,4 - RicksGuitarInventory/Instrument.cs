@@ -13,7 +13,6 @@ namespace OOADExercise.Exercise_2_4___RicksGuitarInventory
         private string serialNumber;
         private double price;
         private InstrumentSpec instrumentSpec;
-        private InstrumentType instrumentType;
 
         public Instrument(string serialNumber, double price, InstrumentSpec instrumentSpec)
         {
